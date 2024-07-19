@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: rgb(73, 73, 73);
   color: white;
 }
 
@@ -25,15 +25,6 @@ body {
   font-size: 15px;
   background-color: white;
 }
-.inputContainer_input {
-  margin: 6px 0 0px 0;
-  padding: 5px;
-  display: flex;
-  border: 1px solid rgb(255, 255, 255);
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
 .inputContainer {
   display: flex;
   align-items: center;
@@ -42,3 +33,14 @@ body {
 .inputContainer > span {
   margin-top: 5px;
 }
+
+.inputContainer_input {
+    margin: 6px 0 0px 2px;
+    padding: 5px;
+    display: flex;
+    border: 1px solid rgb(255, 255, 255);
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: rgb(197, 190, 190);
+  }
