@@ -1,42 +1,38 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.products {
+  margin: 20px;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.products__single {
+  height: 250px;
+  list-style: none;
+  padding: 20px;
+  background-color: rgb(220, 220, 220);
   text-align: center;
+  border-radius: 5px;
+  cursor: pointer; 
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.products__single > img{
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  margin-bottom: 3px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pagination {
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.pagination > span{
 }
 
-.card {
-  padding: 2em;
+.pagination__disable{
 }
 
-.read-the-docs {
-  color: #888;
+.pagination__selected{
+  background-color: rgb(220, 220, 220);
 }
