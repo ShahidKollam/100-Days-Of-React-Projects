@@ -2,11 +2,12 @@ const useTraverseTree = () => {
 
   // Function to insert a new node (folder or file) into the tree
   function insertNode(tree, folderId, item, isFolder) {
-
+    
     // Check if the current node matches the folderId and is a folder
     if (tree.id === folderId && tree.isFolder) {
 
       // Insert the new item at the beginning of the items array
+
       tree.items.unshift({
         id: new Date().getTime(), // Generate a unique id based on the current timestamp
         name: item, // Set the name of the new item
@@ -17,6 +18,7 @@ const useTraverseTree = () => {
     }
 
     // If the current node is not the target folder, recursively traverse its children
+
     let latestNode = [];
     latestNode = tree.items.map((ob) => {
       return insertNode(ob, folderId, item, isFolder); // Recursively call insertNode for each child
