@@ -13,7 +13,7 @@ const Folder = ({ explorer, handleInsertNode }) => {
 
   // Function to handle the creation of a new folder or file
   const handleNewFolder = (e, isFolder) => {
-    e.stopPropagation(); // Prevent event from bubbling up
+    e.stopPropagation(); 
     setExpand(true); // Expand the folder to show the input field
     setShowInput({
       isVisible: true,
