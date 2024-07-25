@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-const ProgressBar = ({ value }) => {
+const ProgressBar = ({ value=0, onComplete = () => {} }) => {
     const [percent, setPercent] = useState(value);
 
     useEffect(() => {
         setPercent(Math.min(100, Math.max(value, 0)));
+
+        if (value >= 100) {
+            onComplete();
+        }
+        
     }, [value]);
 
     return (
@@ -13,7 +18,7 @@ const ProgressBar = ({ value }) => {
                 {percent.toFixed()}%
             </span>
             <div
-                style={{ width: `${percent}` }}
+                style={{ transform: `scaleX(${percent / 100}`, transformOrigin: "left" }}
                 area-valuemin={0}
                 area-valuemax={100}
                 area-valuenow={percent.toFixed()}

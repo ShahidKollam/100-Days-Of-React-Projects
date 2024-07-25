@@ -9,23 +9,25 @@ body {
 }
 
 .progress {
-    overflow: hidden;
+    position: relative;
     height: 20px;
     width: 500px;
     background-color: rgb(233, 236, 239);
     border: 1px solid black;
     border-radius: 15px;
+    overflow: hidden;
 }
-
+.progress div {
+    background-color: #00c251;
+    color: #fff;
+    text-align: center;
+    height: 100%;
+}
 .progress span {
     position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.progress div {
-    background-color: #00c251;
-    height: 100%;
-    width: 20%;
+    z-index: 2;
 }
