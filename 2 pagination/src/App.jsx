@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
     const [products, setProducts] = useState([]);
     const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(0)
+    const [totalPages, setTotalPages] = useState(0);
 
     const selectPageHandler = (selectedPage) => {
         if (selectedPage >= 1 && selectedPage <= products.length / 10 && selectedPage !== page) {
@@ -17,11 +17,10 @@ function App() {
     const fetchProducts = async () => {
         const res = await fetch(`https://dummyjson.com/products?limit=100`);
         const data = await res.json();
-        console.log(data);
 
         if (data && data.products) {
             setProducts(data.products);
-            setTotalPages(data.total)
+            //setTotalPages(data.total/10)
         }
     };
 
@@ -45,10 +44,7 @@ function App() {
             )}
             {products.length > 0 && (
                 <div className="pagination">
-                    <span
-                        className={page > 1 ? "" : "pagination__disable"}
-                        onClick={() => selectPageHandler(page - 1)}
-                    >
+                    <span className={page > 1 ? "" : "pagination__disable"} onClick={() => selectPageHandler(page - 1)}>
                         ◀
                     </span>
                     {[...Array(products.length / 10)].map((_, i) => {
