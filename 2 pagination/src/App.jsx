@@ -7,10 +7,9 @@ function App() {
     const [totalPages, setTotalPages] = useState(0);
 
     const selectPageHandler = (selectedPage) => {
-        if (selectedPage >= 1 && selectedPage <= products.length / 10 && selectedPage !== page) {
+        if (selectedPage >= 1 && selectedPage <= totalPages && selectedPage !== page) {
             setPage(selectedPage);
         }
-        console.log(page);
     };
 
     // Function to fetch products from the API and set them in state
@@ -20,7 +19,7 @@ function App() {
 
         if (data && data.products) {
             setProducts(data.products);
-            //setTotalPages(data.total/10)
+            setTotalPages(Math.ceil(data.products.length / 12));
         }
     };
 
@@ -32,7 +31,7 @@ function App() {
         <div>
             {products.length > 0 && (
                 <div className="products">
-                    {products.slice(page * 10 - 10, page * 10).map((product) => {
+                    {products.slice(page * 12 - 12, page * 12).map((product) => {
                         return (
                             <span className="products__single" key={product.id}>
                                 <img src={product.thumbnail} alt={product.title} />
@@ -47,7 +46,7 @@ function App() {
                     <span className={page > 1 ? "" : "pagination__disable"} onClick={() => selectPageHandler(page - 1)}>
                         ◀
                     </span>
-                    {[...Array(products.length / 10)].map((_, i) => {
+                    {[...Array(totalPages)].map((_, i) => {
                         return (
                             <span
                                 className={page === i + 1 ? "pagination__selected" : ""}
@@ -59,7 +58,7 @@ function App() {
                         );
                     })}
                     <span
-                        className={page < products.length / 10 ? "" : "pagination__disable"}
+                        className={page < totalPages ? "" : "pagination__disable"}
                         onClick={() => selectPageHandler(page + 1)}
                     >
                         ▶
