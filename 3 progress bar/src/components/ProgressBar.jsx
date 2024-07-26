@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const ProgressBar = ({ value=0, onComplete = () => {} }) => {
+const ProgressBar = ({ value = 0, onComplete = () => {} }) => {
     const [percent, setPercent] = useState(value);
 
     useEffect(() => {
@@ -9,19 +9,19 @@ const ProgressBar = ({ value=0, onComplete = () => {} }) => {
         if (value >= 100) {
             onComplete();
         }
-        
-    }, [value]);
+    }, [value, onComplete]);
 
     return (
         <div className="progress">
-            <span style={{ color: percent > 49 ? "white" : "black" }} role="progressbar">
+            <span className="progress-label" style={{ color: percent > 54 ? "white" : "black" }} role="progressbar">
                 {percent.toFixed()}%
             </span>
             <div
-                style={{ transform: `scaleX(${percent / 100}`, transformOrigin: "left" }}
-                area-valuemin={0}
-                area-valuemax={100}
-                area-valuenow={percent.toFixed()}
+                className="progress-bar"
+                style={{ width: `${percent}%` }}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-valuenow={percent.toFixed()}
             ></div>
         </div>
     );
