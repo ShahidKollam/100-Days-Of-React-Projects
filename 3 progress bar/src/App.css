@@ -1,33 +1,80 @@
 body {
-    font-family: sans-serif;
+    font-family: "Arial", sans-serif;
+    background-color: #000000;
+    color: #c0c0c0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
 }
+
 .app {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 7px;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #1d1d1d 0%, #121212 100%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    color: #b6b6b6;
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.status {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .progress {
     position: relative;
-    height: 20px;
+    height: 30px;
     width: 500px;
-    background-color: rgb(233, 236, 239);
-    border: 1px solid black;
-    border-radius: 15px;
+    background-color: #e9ecef;
+    border-radius: 50px;
     overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
-.progress div {
-    background-color: #00c251;
-    color: #fff;
-    text-align: center;
-    height: 100%;
-}
-.progress span {
+
+.progress-label {
     position: absolute;
+    padding: 3px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
     z-index: 2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #77ff70, #00ff11);
+    height: 100%;
+    transition: width 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px 0 0 50px;
+    animation: progress-animation 2s ease-out infinite alternate;
+}
+
+@keyframes progress-animation {
+    0% {
+        filter: brightness(1);
+    }
+    100% {
+        filter: brightness(1.5);
+    }
 }
