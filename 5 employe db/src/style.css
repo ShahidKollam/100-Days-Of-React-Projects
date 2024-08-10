@@ -28,5 +28,28 @@ body {
     display: flex;
 }
 .employees > div {
-    
+    border: 1px solid black;
+    overflow-y: scroll;
+    height: 450px;
+}
+.employee__names {
+    width: 30%;
+}
+.employee__single {
+    width: 70%;
+}
+.employee__names,
+.employee__single {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.employee__names--title,
+.employee__single--title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    background-color: var(--btn);
 }
