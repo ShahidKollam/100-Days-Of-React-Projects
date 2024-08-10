@@ -1,0 +1,32 @@
+/* Initial Structural CSS - START */
+:root {
+    --btn: #c2c1c1;
+    --btn-hover: #969595;
+    --item-bg: #f0f0f0;
+    --modal-bg: rgba(141, 141, 141, 0.541);
+}
+body {
+    font-family: sans-serif;
+    padding: 0 10px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header > button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--btn);
+    cursor: pointer;
+}
+.header > button:hover {
+    background-color: var(--btn-hover);
+}
+.employees {
+    display: flex;
+}
+.employees > div {
+    
+}
