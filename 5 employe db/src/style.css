@@ -1,13 +1,14 @@
 /* Initial Structural CSS - START */
 :root {
-    --btn: #c2c1c1;
+    --btn: #9e95c3;
     --btn-hover: #969595;
-    --item-bg: #f0f0f0;
+    --item-bg: #e9e8e8;
     --modal-bg: rgba(141, 141, 141, 0.541);
 }
 body {
     font-family: sans-serif;
     padding: 0 10px;
+    background-color: #969696;
 }
 .header {
     display: flex;
@@ -51,5 +52,24 @@ body {
     margin-bottom: 5px;
     text-align: center;
     border-bottom: 2px solid black;
+    background-color: var(--btn);
+}
+.employee__names--list {
+    display: flex;
+    flex-direction: column;
+}
+.employee__names--item {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    text-align: center;
+    background-color: var(--item-bg);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.employee__names--item:hover,
+.selected {
     background-color: var(--btn);
 }
